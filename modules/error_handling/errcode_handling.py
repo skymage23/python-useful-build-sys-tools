@@ -1,8 +1,10 @@
 import development
 
-next_available = 0
-errcodes = {}
-messages = {}
+SUCCESS_ERRCODE = 0
+
+next_available = 1
+errcodes = {"success": SUCCESS_ERRCODE}
+messages = {SUCCESS_ERRCODE: "Success"}
 
 def gen_errcode():
     retval = next_available
@@ -19,6 +21,7 @@ def register_errcode(name: str = None, message: str = None):
     errcode = gen_errcode()
     errcodes[name] = errcode
     messages[errcode] = message
+    return errcode
 
 def get_message(errcode):
     if isinstance(errcode,int):
