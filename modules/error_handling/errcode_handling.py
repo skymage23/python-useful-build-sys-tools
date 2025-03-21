@@ -3,7 +3,7 @@ import development
 SUCCESS_ERRCODE = 0
 GENERIC_ERROR_ERRCODE = 1
 
-next_available = 1
+next_available = 2
 errcodes = {
     "success": SUCCESS_ERRCODE,
     "generic_error": GENERIC_ERROR_ERRCODE    
@@ -14,6 +14,7 @@ messages = {
 }
 
 def gen_errcode():
+    global next_available
     retval = next_available
     next_available += 1
     return retval
