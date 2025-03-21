@@ -1,10 +1,17 @@
 import development
 
 SUCCESS_ERRCODE = 0
+GENERIC_ERROR_ERRCODE = 1
 
 next_available = 1
-errcodes = {"success": SUCCESS_ERRCODE}
-messages = {SUCCESS_ERRCODE: "Success"}
+errcodes = {
+    "success": SUCCESS_ERRCODE,
+    "generic_error": GENERIC_ERROR_ERRCODE    
+}
+messages = {
+    SUCCESS_ERRCODE: "Success",
+    GENERIC_ERROR_ERRCODE: "Unknown error."
+}
 
 def gen_errcode():
     retval = next_available
